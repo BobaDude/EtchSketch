@@ -1,30 +1,28 @@
 const container = document.getElementById('container');
 const resizeButton = document.getElementById('resizeButton');
 
+createGrid(16)
 function createGrid(size) {
     container.innerHTML = '';
-    const cellSize = 960;
-    for (let i = 0; i < size * size; i++){
+    const totalSquares = size * size;
+    const squareSize = 100 / size;
+    for (let i = 0; i < totalSquares; i++){
         const div = document.createElement('div');
-        div.classList.add('grid-cell');
-        div.style.width = `${cellSize}px`;
-        div.style.height = `${cellSize}px`;
-        div.addEventListener('mouseover', () => {
-            div.style.backgroundCOlor = 'black';
-        });
-        container.appendChild(div)
+        div.classList.add('grid-square');
+        div.style.flexBasis = `${squareSize}%`;
+        container.appendChild(div);
+        };
+        
     }
-}
 
 resizeButton.addEventListener('click', () => {
     let newSize = prompt('Enter the # of squares you want the sides to be', 16);
     newSize = parseInt(newSize);
 
-    if (newSize && newSize > 0 && newSize <= 100){
+    if (!isNaN(newSize) && newSize > 0 && newSize <= 100){
         createGrid(newSize);
     } else{
         alert('Please choose a # between 1 and 100')
     }
 }); 
 
-createGrid(16)
