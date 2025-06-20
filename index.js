@@ -11,9 +11,9 @@ function createGrid(size) {
         const div = document.createElement('div');
         div.classList.add('grid-square');
         div.style.flexBasis = `${squareSize}%`;
-        div.addEventListener('mouseenter', ( => {
+        div.addEventListener('mouseenter', () => {
             div.style.backgroundColor = 'black';
-        }))
+        })
         container.appendChild(div);
         };
         
