@@ -6,10 +6,14 @@ function createGrid(size) {
     container.innerHTML = '';
     const totalSquares = size * size;
     const squareSize = 100 / size;
+    
     for (let i = 0; i < totalSquares; i++){
         const div = document.createElement('div');
         div.classList.add('grid-square');
         div.style.flexBasis = `${squareSize}%`;
+        div.addEventListener('mouseenter', ( => {
+            div.style.backgroundColor = 'black';
+        }))
         container.appendChild(div);
         };
         
