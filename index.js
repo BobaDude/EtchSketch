@@ -7,12 +7,12 @@ function createGrid(size) {
     for (let i = 0; i < size * size; i++){
         const div = document.createElement('div');
         div.classList.add('grid-cell');
-        div.style.width = '${cellSize}px';
-        div.style.height = '${cellSize}px';
+        div.style.width = `${cellSize}px`;
+        div.style.height = `${cellSize}px`;
         div.addEventListener('mouseover', () => {
             div.style.backgroundCOlor = 'black';
         })
-        container.appendChild
+        container.appendChild(div)
     }
 }
 
@@ -27,4 +27,4 @@ resizeButton.addEventListener('click', () => {
     }
 }); 
 
-createGrid
+createGrid(16)
